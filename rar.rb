@@ -7,8 +7,8 @@ class Rar < Formula
   sha1 '77e6d0887dff0884191bdf8937d62645fe4c6740'
 
   def install
-    system "ls; pwd"
-    bin.install 'rar' #, 'unrar'
+    # unrar is provided by 'unrar' recipe in homebrew
+    bin.install "rar"
   end
 
   def test
