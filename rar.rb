@@ -6,13 +6,12 @@ class Rar < Formula
   sha1 '20c0902650b842130aa3fc5c249c312bcd9d3440'
 
   def install
-    # don't install unrar... part of main homebrew
-    prefix.install 'rar' #, 'unrar'
+    prefix.install 'rar' , 'unrar'
+    # don't install unrar in bin (hombrew already includes this), just rar...
+    bin.install "rar"
   end
 
   def test
     system 'rar'
-    # not installing above, don't test for...
-    #system 'unrar'
   end
 end
