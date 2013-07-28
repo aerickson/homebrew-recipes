@@ -2,16 +2,17 @@ require 'formula'
 
 class Rar < Formula
   homepage 'http://www.rarlab.com/'
-  url 'http://www.rarlab.com/rar/rarosx-4.2.0.tar.gz'
-  sha1 '20c0902650b842130aa3fc5c249c312bcd9d3440'
+  url 'http://www.rarlab.com/rar/rarosx-5.0.b7.tar.gz'
+  version '5.0.b7'
+  sha1 '77e6d0887dff0884191bdf8937d62645fe4c6740'
 
   def install
-    prefix.install 'rar' , 'unrar'
-    # don't install unrar in bin (hombrew already includes this), just rar...
-    bin.install "rar"
+    system "ls; pwd"
+    bin.install 'rar' #, 'unrar'
   end
 
   def test
-    system 'rar'
+    system "rar"
   end
+
 end
