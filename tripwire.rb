@@ -1,7 +1,8 @@
 require 'formula'
 
-# needs to be installed with: 
-#  brew install tripwire --env=std --use-llvm
+# needs to be installed with:
+#  brew install tripwire --env=std --use-llvm --debug
+#  - when it fails, run make install to do interactive config
 
 class Tripwire < Formula
   homepage 'http://sourceforge.net/projects/tripwire/'
@@ -10,7 +11,7 @@ class Tripwire < Formula
 
   def install
     system "./configure", "--prefix=#{prefix}"
-    # janky install
+    system "make"
 
     # this will fail due to interactive license part...
     #system "make", "install"
