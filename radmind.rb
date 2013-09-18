@@ -9,7 +9,9 @@ class Radmind < Formula
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
-    # fails here due to superenv... select 'cc' vs 'gcc'
+    # fails here due to superenv... selects 'cc' vs 'gcc'
+    # fails the first time, works the second!?!
+    system "make ; true"
     system "make"
     system "make", "install"
   end
