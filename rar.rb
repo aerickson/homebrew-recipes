@@ -2,9 +2,9 @@ require 'formula'
 
 class Rar < Formula
   homepage 'http://www.rarlab.com/'
-  url 'http://www.rarlab.com/rar/rarosx-5.0.b7.tar.gz'
-  version '5.0.b7'
-  sha1 '77e6d0887dff0884191bdf8937d62645fe4c6740'
+  url 'http://www.rarlab.com/rar/rarosx-5.1.b3.tar.gz'
+  version '5.1.b3'
+  sha1 '1f9f8885824c8bd24c101f7cff811d0fb688b8b7'
 
   def install
     # unrar is provided by 'unrar' recipe in homebrew
