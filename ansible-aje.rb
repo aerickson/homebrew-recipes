@@ -1,4 +1,4 @@
-class AnsibleAJE < Formula
+class AnsibleAje < Formula
   include Language::Python::Virtualenv
 
   desc "Automate deployment, configuration, and upgrading"
