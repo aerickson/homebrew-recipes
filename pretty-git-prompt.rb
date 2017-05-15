@@ -10,13 +10,14 @@ class PrettyGitPrompt < Formula
   depends_on "pkg-config" => :build
   depends_on "cmake" => :build
   depends_on "openssl" => :build
-  # depends_on "openssl@1.1" => :build
   depends_on "rust" => :build
 
   def install
     # something on my path is fixing the compilation errors...
     #   - don't have enough things depens_on'd above...
-    system "PATH=/Users/$USER/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/$USER/Library/Python/2.7/bin:/Users/$USER/git:/Users/$USER/bin cargo build --release"
+    system "PATH=/Users/$USER/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:" \
+      "/opt/X11/bin:/Users/$USER/Library/Python/2.7/bin:/Users/$USER/git:/Users/$USER/bin " \
+      "cargo build --release"
     bin.mkpath
     bin.install "./target/release/pretty-git-prompt"
   end
