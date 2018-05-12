@@ -5,7 +5,7 @@ cask 'locktight' do
   url "https://github.com/aerickson/locktight/releases/download/locktight-#{version}/locktight-#{version}.zip"
   name 'LockTight'
   homepage 'https://github.com/aerickson/locktight'
-  license :gpl
+  #license :gpl
 
   prefpane 'LockTight.prefPane'
 end
