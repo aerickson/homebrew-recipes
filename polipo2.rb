@@ -3,6 +3,7 @@ class Polipo2 < Formula
   homepage "http://people.ds.cam.ac.uk/ssb22/adjuster/polipo2.html"
   url "head_only"
   sha256 "xxx"
+  version "0.0.1"
   head "https://github.com/ssb22/polipo2.git"
 
   def install
