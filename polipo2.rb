@@ -22,36 +22,10 @@ class Polipo2 < Formula
     system "make", "all", *args
     system "make", "install", *args
   end
-
-  plist_options :manual => "polipo2"
-
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>KeepAlive</key>
-        <true/>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{opt_bin}/polipo2</string>
-        </array>
-        <!-- Set `ulimit -n 65536`. The default macOS limit is 256, that's
-             not enough for Polipo (displays 'too many files open' errors).
-             It seems like you have no reason to lower this limit
-             (and unlikely will want to raise it). -->
-        <key>SoftResourceLimits</key>
-        <dict>
-          <key>NumberOfFiles</key>
-          <integer>65536</integer>
-        </dict>
-      </dict>
-    </plist>
-  EOS
+  
+  service do
+    run opt_bin/"polipo2"
+    keep_alive true
   end
 
   test do
