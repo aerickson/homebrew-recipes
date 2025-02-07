@@ -21,6 +21,7 @@ class Mtr085 < Formula
     #system "meson", "compile", "-C", "build", "--verbose"
     #system "meson", "install", "-C", "build"
     system "meson", "setup", "_build", "-DCAP=false", *std_meson_args
+    system "meson", "compile", "-C", "_build", "--verbose"
     bin.install "_build/mtr" => "mtr085"
   end
 
